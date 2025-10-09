@@ -90,7 +90,7 @@ function TodoItem({
   todo: { id: number; text: string }
   hideRemove?: boolean
 }) {
-  const [removeTodoState, removeTodo] = useAtom(removeTodoAtom(todo.id))
+  const removeTodo = useAtomSet(removeTodoAtom)
   return (
     <div
       key={todo.id}
@@ -102,11 +102,10 @@ function TodoItem({
       {!hideRemove && (
         <button
           type="button"
-          onClick={() => removeTodo()}
-          disabled={removeTodoState.waiting}
+          onClick={() => removeTodo(todo.id)}
           className="bg-red-500 hover:bg-red-600 text-white font-semibold py-1 px-3 rounded disabled:opacity-50"
         >
-          {removeTodoState.waiting ? "Removing..." : "Remove"}
+          Remove
         </button>
       )}
     </div>

@@ -72,20 +72,16 @@ export const addTodoString = TodosRepo.runtime.fn(
   }),
 )
 
-export const removeTodoAtom = Atom.family((id: number) =>
-  Atom.optimisticFn(todosAtom, {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    reducer(current, _: void) {
-      console.log("optimisticRemoveTodosAtom", id)
-      return current.filter((t) => t.id !== id)
-    },
-    fn: TodosRepo.runtime.fn(
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      Effect.fnUntraced(function* (_) {
-        console.log("removeTodoAtom", id)
-        yield* TodosRepo.remove(id)
-      }),
-      { concurrent: true },
-    ),
-  }),
-)
+export const removeTodoAtom = Atom.optimisticFn(todosAtom, {
+  reducer(current, id: number) {
+    console.log("optimisticRemoveTodosAtom", id)
+    return current.filter((t) => t.id !== id)
+  },
+  fn: TodosRepo.runtime.fn(
+    Effect.fnUntraced(function* (id) {
+      console.log("removeTodoAtom", id)
+      yield* TodosRepo.remove(id)
+    }),
+    { concurrent: true },
+  ),
+})
