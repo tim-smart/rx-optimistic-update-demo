@@ -1,21 +1,26 @@
-import { useRx, useRxRefresh, useRxSet, useRxValue } from "@effect-rx/rx-react";
 import {
-  updateFailsRx,
-  removeTodoRx,
-  todosRx,
-  todosRxReadonly,
+  useAtom,
+  useAtomRefresh,
+  useAtomSet,
+  useAtomValue,
+} from "@effect-atom/atom-react"
+import {
+  updateFailsAtom,
+  removeTodoAtom,
+  todosAtom,
+  todosAtomReadonly,
   addTodoString,
-} from "./rx";
-import { useState } from "react";
+} from "./atoms"
+import { useState } from "react"
 
 export default function App() {
-  const [updateFails, setUpdateFails] = useRx(updateFailsRx);
-  const [input, setInput] = useState("");
-  const trueTodos = useRxValue(todosRxReadonly);
-  const optimisticTodos = useRxValue(todosRx);
-  const addTodo = useRxSet(addTodoString);
+  const [updateFails, setUpdateFails] = useAtom(updateFailsAtom)
+  const [input, setInput] = useState("")
+  const trueTodos = useAtomValue(todosAtomReadonly)
+  const optimisticTodos = useAtomValue(todosAtom)
+  const addTodo = useAtomSet(addTodoString)
 
-  const manuallyRefresh = useRxRefresh(todosRx);
+  const manuallyRefresh = useAtomRefresh(todosAtom)
 
   return (
     <div className="w-full p-4">
@@ -75,17 +80,17 @@ export default function App() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 function TodoItem({
   todo,
   hideRemove,
 }: {
-  todo: { id: number; text: string };
-  hideRemove?: boolean;
+  todo: { id: number; text: string }
+  hideRemove?: boolean
 }) {
-  const [removeTodoState, removeTodo] = useRx(removeTodoRx(todo.id));
+  const [removeTodoState, removeTodo] = useAtom(removeTodoAtom(todo.id))
   return (
     <div
       key={todo.id}
@@ -105,5 +110,5 @@ function TodoItem({
         </button>
       )}
     </div>
-  );
+  )
 }
