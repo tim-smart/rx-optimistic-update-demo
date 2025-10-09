@@ -10,7 +10,7 @@ interface Todo {
 
 class TodosRepo extends Effect.Service<TodosRepo>()("TodosRepo", {
   accessors: true,
-  scoped: Effect.gen(function* () {
+  sync() {
     let currentId = 0
     let todos = Array.empty<Todo>()
 
@@ -45,7 +45,7 @@ class TodosRepo extends Effect.Service<TodosRepo>()("TodosRepo", {
         return todos
       }),
     }
-  }),
+  },
 }) {
   static runtime = Atom.runtime(TodosRepo.Default)
 }
