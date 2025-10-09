@@ -69,9 +69,9 @@
 
     "@babel/types": ["@babel/types@7.28.4", "", { "dependencies": { "@babel/helper-string-parser": "^7.27.1", "@babel/helper-validator-identifier": "^7.27.1" } }, "sha512-bkFqkLhh3pMBUQQkpVgWDWq/lqzc2678eUyDlTBhRqhCHFguYYGM0Efga7tYk4TogG/3x0EEl66/OQ+WGbWB/Q=="],
 
-    "@effect-atom/atom": ["@effect-atom/atom@0.3.1", "", { "peerDependencies": { "@effect/experimental": "^0.56.0", "@effect/platform": "^0.92.0", "@effect/rpc": "^0.71.0", "effect": "^3.18.0" } }, "sha512-K+wjzM/tZ2Elnbt59K37q5uY0cBuu1Q8q3rFkOM40rxQHyxpllXng550V3XEqmkjPGyB+LWN1aVhFkFaT88oZA=="],
+    "@effect-atom/atom": ["@effect-atom/atom@0.3.2", "", { "peerDependencies": { "@effect/experimental": "^0.56.0", "@effect/platform": "^0.92.0", "@effect/rpc": "^0.71.0", "effect": "^3.18.0" } }, "sha512-vnwdE0/rzuma7zTg+aUUZAqzGvWb7WuveZTpTG22PgSLT87nMDHdYKF+WGvFRj0mZb+uYDtOAeViMMHM2mi3XQ=="],
 
-    "@effect-atom/atom-react": ["@effect-atom/atom-react@0.3.1", "", { "dependencies": { "@effect-atom/atom": "^0.3.1" }, "peerDependencies": { "effect": "^3.18", "react": ">=18 <20", "scheduler": "*" } }, "sha512-aIPTNLbCryR9b44BLIeYEsEr56CfNMM3Nbh/mz+yhIgGqZ7RKCg2zrrWxp/oyKiRe3MEtUuNY0ZOqk4OfVeIEw=="],
+    "@effect-atom/atom-react": ["@effect-atom/atom-react@0.3.2", "", { "dependencies": { "@effect-atom/atom": "^0.3.2" }, "peerDependencies": { "effect": "^3.18", "react": ">=18 <20", "scheduler": "*" } }, "sha512-RZ8ookTqmP4Zz8oUWOZD8F5iZ1WIYlr+RyHJiz+LdmV4vAf9uAItmpkRbW2r0c7Qa6ZQx5GvFCB6dmDf+HD5Wg=="],
 
     "@effect/experimental": ["@effect/experimental@0.56.0", "", { "dependencies": { "uuid": "^11.0.3" }, "peerDependencies": { "@effect/platform": "^0.92.0", "effect": "^3.18.0", "ioredis": "^5", "lmdb": "^3" }, "optionalPeers": ["ioredis", "lmdb"] }, "sha512-ZT9wTUVyDptzdkW4Tfvz5fNzygW9vt5jWcFmKI9SlhZMu9unVJgsBhxWCNYCyfPnxw3n/Z6SEKsqgt8iKQc4MA=="],
 

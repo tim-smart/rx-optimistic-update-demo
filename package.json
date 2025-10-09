@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@effect-atom/atom-react": "^0.3.1",
+    "@effect-atom/atom-react": "^0.3.2",
     "@effect/platform": "^0.92.1",
     "@effect/platform-browser": "^0.72.0",
     "@tailwindcss/vite": "^4.1.14",
